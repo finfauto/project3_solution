@@ -1,5 +1,3 @@
-from typing import Any
-
 from imperial_to_metric import mph_to_kph
 
 
