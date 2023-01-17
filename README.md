@@ -38,9 +38,9 @@ Y a cada race_lap le actualizaremos el valor invocando la función para transfor
         race_lap["average_speed"] = mph_to_kph(race_lap["average_speed"])
 ```
 
-Si os fijáis, estamos actualizando el valor dentro de la lista y devolviendo la misma lista que hemos recibido como parámetro. Esto es posible por una cualidad del parámetro, en este caso una lista, que funciona usando referencias y no copiando el valor. Esta parte queda fuera del objetivo del curso, así que no prestar atención a este detalle.
+Si os fijáis, estamos actualizando el valor dentro de la lista y devolviendo la misma lista que hemos recibido como parámetro.
 
-En nuestras implementaciones normalmente no hemos actualizado valores que hemos recibido, así que otra solución más en consonancia con el resto de ejercicios sería:
+Otra implementación posible sería coniderar dicha variable como la fuente de la información y definir una nueva lista para devolver el resultado:
 
 ```python
 transformed_race_laps = []
@@ -54,11 +54,11 @@ for race_lap in driver_race_laps:
 return transformed_race_laps
 ```
 
-De esta forma nos ajustamos más a nuestros conocimientos:
+La receta sería:
 
 1. Creamos una lista vacía que usaremos como resultado
-2. Recorremos la lista con los datos que nos dan
-3. Por cada entrada, creamos un diccionario nuevo que añadiremos en nuestro resultado.
+2. Recorremos la lista con la información de entrada
+3. Por cada entrada de la lista creamos un diccionario nuevo que añadiremos en nuestro resultado.
 4. A ese diccionario le añadimos todos los datos que debe tener. lap_number y average_speed, que aprovechamos a transformar como nos pide el enunciado
 5. Añadimos el nuevo diccionario creado y lo metemos en la lista resultado
 6. Devolvemos la lista resultado
